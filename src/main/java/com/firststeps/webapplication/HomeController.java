@@ -12,13 +12,12 @@ import java.util.List;
  */
 @Controller
 public class HomeController {
-    record Video(String name) {}
+    private final VideoService videoService;
 
-    List<Video> videos = List.of(
-            new Video("Need Help with your Spring Boot"),
-            new Video("Dont do this to your own CODE!"),
-            new Video("SECRETS to fix BROKEN CODE!")
-    );
+    public HomeController(VideoService videoService) {
+        this.videoService = videoService;
+    }
+
     /**
      * @GetMapping es un componente para llamar por metodo Get
      * @return
@@ -28,8 +27,9 @@ public class HomeController {
         /**
          * Pasamos variable hacía el template para que pueda ser leida
          * Nota: En caso de objetos o tipos más complejos, serianlizar JSON.
+         * Nota2: Lo normal es no desarrollar codigo en un controlador, sino en los servicios
          */
-        model.addAttribute("videos", videos);
+        model.addAttribute("videos", videoService.getVideos());
         return "index";
     }
 }
