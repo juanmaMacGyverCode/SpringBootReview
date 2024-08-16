@@ -21,7 +21,7 @@ public class ApiController {
     }
 
     /**
-     * Probar por postman
+     * Only postman
      * @param newVideo
      * @return
      */

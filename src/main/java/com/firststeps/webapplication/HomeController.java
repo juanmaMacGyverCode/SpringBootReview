@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.List;
-
 /**
  * @Controller indica que estamos ante un controlador. Spring boot lo detectará automáticamente con su component
  * scanning y creará una instancia
@@ -39,5 +37,14 @@ public class HomeController {
     public String newVideo(@ModelAttribute Video newVideo) {
         videoService.create(newVideo);
         return "redirect:/";
+    }
+
+    /**
+     * React method
+     * @return
+     */
+    @GetMapping("/react")
+    public String react() {
+        return "react";
     }
 }

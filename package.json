@@ -1,0 +1,19 @@
+{
+  "source": "src/main/javascript/index.js",
+  "scripts": {
+    "start": "parcel src/main/javascript/index.html",
+    "build": "parcel build src/main/javascript/index.html --dist-dir src/main/resources/static"
+  },
+  "targets": {
+    "default": {
+      "distDir": "target/classes/static"
+    }
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
